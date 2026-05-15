@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #dcc1ff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    border-radius: 16px;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    gap: 10px;
+
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeSlideUp 0.8s ease-out 0.2s forwards;
+}
+
+@keyframes fadeSlideUp {
+    to {
+        opacity: 0.9;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    opacity: 1;
+    margin-bottom: 10px;
+    font-size: 50px;
+    font-family: "Sour Gummy", sans-serif;
+}
+
+p {
+    opacity: 1;
+    margin-top: 0;
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.button {
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: none;
+    background-color: #db8cff;
+    color: white;
+    font-family: "Sour Gummy", sans-serif;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.button:hover {
+    background-color: #d16fff;
+}
