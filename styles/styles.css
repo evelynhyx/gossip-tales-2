@@ -50,6 +50,16 @@ p {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+a {
+    color: #db8cff;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: #d16fff;
+}
+
 .button {
     padding: 10px 18px;
     border-radius: 20px;
