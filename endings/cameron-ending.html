@@ -19,11 +19,26 @@
         <div class="card" id="card">
             <div class="card-inner">
                 <div class="card-front">
-                    <h1>Click to Find Out if Cameron's Behind This!</h1>
+                    <h1>Click to Find Out if<br>Cameron's Behind This!</h1>
                 </div>
                 <div class="card-back">
                     <h1>CAMERON<br>Did Not Reveal the Truth</h1>
-                    <p>"Wow, who would have guessed? You'd think your ex would be the one to spread a rumor about you, but you thought wrong!"</p>
+                    <p>"Wow. Okay, I see how it is, family friend. I know I was pestering you, but you should be able to tell the difference
+                        between me pestering you and me being serious."
+                        <br><br>
+                        You rolled your eyes. "Huh. Can't tell if you're pestering me now.
+                        Listen, you're just the only family friend who's my age, so our conversations aren't weird.
+                        I know the same goes for you. Your parents said you'd be glued to your phone if it weren't for me talking to you,
+                        so either you stop being so annoying, or we never talk again. Your choice."
+                        <br><br>
+                        Cameron said under his breath, "Yeah yeah. Just don't blame this on me,
+                        I didn't do anything and I literally forgot you even had a job."
+                        <br><br>
+                        You scoffed. "Oh yeah? Then how'd you remember that I had a job at the bakery?"
+                        <br><br>
+                        "Now you're the one pestering me. Ava, it literally wasn't me. You know what? I'll go with the second option.
+                        'Never talk again'? Sounds good to me."
+                    </p>
                 </div>
             </div>
         </div>
@@ -32,13 +47,17 @@
             <img src="../assets/next-arrow.png" class="next-arrow">
         </div>
 
-        <div>
-            <h2 style="text-align: center; font-family: 'Sour Gummy', sans-serif">The End</h2>
+        <div class="end-scene">
+            <h2 class="end-title">The End</h2>
+            <img src="../assets/replay.png" class="replay-btn" onclick="window.location.href='../scenario/index.html'">
         </div>
 
         <script>
             const card = document.getElementById('card');
             const nextBtn = document.getElementById('next-btn');
+            const endScene = document.querySelector('.end-scene');
+            const endTitle = document.querySelector('.end-title');
+            const replayBtn = document.querySelector('.replay-btn');
 
             card.addEventListener('click', () => {
                 card.classList.toggle('flipped');
@@ -46,7 +65,15 @@
             });
 
             nextBtn.addEventListener('click', () => {
-                window.location.href = 'end-scene.html'; // activate end scene (modal)
+                endScene.classList.add('active');
+
+                setTimeout(() => {
+                    endTitle.classList.add('visible');
+                }, 1000);
+
+                setTimeout(() => {
+                    replayBtn.classList.add('visible');
+                }, 2200);
             });
         </script>
     </body>

@@ -235,3 +235,56 @@ a:hover {
     transform: translateX(-50%);
     cursor: pointer;
 }
+
+.end-scene {
+    position: fixed;
+    inset: 0;
+    background: black;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+
+.end-scene.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.end-scene img {
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+}
+
+.end-title {
+    font-family: 'Sour Gummy', sans-serif;
+    font-size: 40px;
+    color: white;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.end-title.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.replay-btn {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.replay-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Matteo's Ending</title>
+        <link rel="stylesheet" href="../styles/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <style>
+            body {
+                flex-direction: column;
+                gap: 24px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card" id="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h1>Click to Find Out if<br>Matteo's Behind This!</h1>
+                </div>
+                <div class="card-back">
+                    <h1>MATTEO<br>Did Not Reveal the Truth</h1>
+                    <p>"Ava, I thought you trusted me."
+                        <br><br>
+                        Ohhh, you dreaded this conversation. "I'm sorry, I was getting desperate to find the one who told everyone about my job.
+                        Don't worry, you weren't the only one I suspected."
+                        <br><br>
+                        "Lily and Cameron right? You could've just asked me for help, you know. I think Lily's a little suspicious. I can speak
+                        for my guy Cam though. He's a good guy even if he doesn't show it, and he's your family friend, you know?"
+                        <br><br>
+                        "You'd make a great detective, you know." You blinked. "I mean thank you."
+                        <br>
+                        Flushed, you walked away. Putting aside your emotions and how awfully embarrassing that conversation went,
+                        you did see Matteo's point.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="next-btn" id="next-btn">
+            <img src="../assets/next-arrow.png" class="next-arrow">
+        </div>
+
+        <div class="end-scene">
+            <h2 class="end-title">The End</h2>
+            <img src="../assets/replay.png" class="replay-btn" onclick="window.location.href='../scenario/index.html'">
+        </div>
+
+        <script>
+            const card = document.getElementById('card');
+            const nextBtn = document.getElementById('next-btn');
+            const endScene = document.querySelector('.end-scene');
+            const endTitle = document.querySelector('.end-title');
+            const replayBtn = document.querySelector('.replay-btn');
+
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+                nextBtn.classList.toggle('visible', card.classList.contains('flipped'));
+            });
+
+            nextBtn.addEventListener('click', () => {
+                endScene.classList.add('active');
+
+                setTimeout(() => {
+                    endTitle.classList.add('visible');
+                }, 1000);
+
+                setTimeout(() => {
+                    replayBtn.classList.add('visible');
+                }, 2200);
+            });
+        </script>
+    </body>
+</html>

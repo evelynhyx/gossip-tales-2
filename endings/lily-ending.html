@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lily's Ending</title>
+        <link rel="stylesheet" href="../styles/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <style>
+            body {
+                flex-direction: column;
+                gap: 24px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card" id="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h1>Click to Find Out if<br>Lily's Behind This!</h1>
+                </div>
+                <div class="card-back">
+                    <h1>LILY<br>Revealed the Truth</h1>
+                    <p>"Ava, I did it. I revealed the truth about your job at the bakery."
+                        <br>
+                        You felt a rush of emotions, but you didn't know if you were sad or angry. "Lily... why?"
+                        <br><br>
+                        "I don't know, it just... happened. I didn't mean to hurt you at all. I'm really sorry, Ava."
+                        <br><br>
+                        You couldn't believe that Lily, your best friend, would do this to you. All you could feel now was anger.
+                        "You didn't mean to hurt me? You should know how much this would hurt me.
+                        Do you even remember that my parents are divorced—"
+                        <br><br>
+                        "Yes, I remember that. Okay honest? I was... peer pressured into telling. Like, a freaking mountain of pressure.
+                        So I told them about it. I'm so sorry, Ava."
+                        <br><br>
+                        Your anger was suddenly replaced by sadness. Part of you knew it was hard for Lily,
+                        but another part of you just couldn't accept her apology so the only thing you could think of saying is, "Goodbye, Lily."
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="next-btn" id="next-btn">
+            <img src="../assets/next-arrow.png" class="next-arrow">
+        </div>
+
+        <div class="end-scene">
+            <h2 class="end-title">The End</h2>
+            <img src="../assets/replay.png" class="replay-btn" onclick="window.location.href='../scenario/index.html'">
+        </div>
+
+        <script>
+            const card = document.getElementById('card');
+            const nextBtn = document.getElementById('next-btn');
+            const endScene = document.querySelector('.end-scene');
+            const endTitle = document.querySelector('.end-title');
+            const replayBtn = document.querySelector('.replay-btn');
+
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+                nextBtn.classList.toggle('visible', card.classList.contains('flipped'));
+            });
+
+            nextBtn.addEventListener('click', () => {
+                endScene.classList.add('active');
+
+                setTimeout(() => {
+                    endTitle.classList.add('visible');
+                }, 1000);
+
+                setTimeout(() => {
+                    replayBtn.classList.add('visible');
+                }, 2200);
+            });
+        </script>
+    </body>
+</html>
