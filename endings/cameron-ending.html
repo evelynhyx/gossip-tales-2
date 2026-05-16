@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cameron's Ending</title>
+        <link rel="stylesheet" href="../styles/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <style>
+            body {
+                flex-direction: column;
+                gap: 24px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card" id="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h1>Click to Find Out if Cameron's Behind This!</h1>
+                </div>
+                <div class="card-back">
+                    <h1>CAMERON<br>Did Not Reveal the Truth</h1>
+                    <p>"Wow, who would have guessed? You'd think your ex would be the one to spread a rumor about you, but you thought wrong!"</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="next-btn" id="next-btn">
+            <img src="../assets/next-arrow.png" class="next-arrow">
+        </div>
+
+        <div>
+            <h2 style="text-align: center; font-family: 'Sour Gummy', sans-serif">The End</h2>
+        </div>
+
+        <script>
+            const card = document.getElementById('card');
+            const nextBtn = document.getElementById('next-btn');
+
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+                nextBtn.classList.toggle('visible', card.classList.contains('flipped'));
+            });
+
+            nextBtn.addEventListener('click', () => {
+                window.location.href = 'end-scene.html'; // activate end scene (modal)
+            });
+        </script>
+    </body>
+</html>
